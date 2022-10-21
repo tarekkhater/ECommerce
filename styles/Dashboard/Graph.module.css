@@ -1,0 +1,48 @@
+.graph , .darks{
+    
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  padding: 10px;
+  color: gray;
+  width:98.5%;
+  border-radius: 15px;
+ 
+}
+.lines{
+  width:400;
+  height:400;
+}
+.container{
+  margin:30px 0px 15px 0px;
+  width:100%;
+  height: auto;
+}
+.darks{
+  background-color: black;
+}
+
+/*
+@media screen and (max-width:768px) {
+  .graph , .darks{
+    flex: 0;
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  padding:0px;
+  color: gray;
+  position:absolute;
+  margin-top:18px;
+  margin-left:3px;
+  left:0;
+  border-radius: 15px;
+  width:98%;
+  
+}
+.container{
+  
+  width:100%;
+  max-width: 100%;
+  margin:5px 5px 5px -90px;
+  margin-top: 10px;
+}
+
+}*/

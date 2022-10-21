@@ -1,0 +1,101 @@
+.container{
+    padding:10px;
+    
+}
+.table{
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  border-radius: 10px;
+  border:1px solid lightgray;
+  
+}
+
+    .cellWrapper {
+      display: flex;
+      align-items: center;
+      
+    }
+  
+      .image {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        margin-right: 10px;
+        object-fit: cover;
+      }
+    
+  
+    .Approved {
+      padding: 5px;
+      border-radius: 5px;
+      color: green;
+      background-color: rgba(0, 128, 0, 0.151);
+    }
+     
+       
+    
+    .Pending {
+        padding: 5px;
+        border-radius: 5px;
+        color: goldenrod;
+        background-color: rgba(189, 189, 3, 0.103);
+    }
+    
+    #darks{
+    background-color: black;
+    color:white;
+  }
+  #darkss{
+    width:100%;
+    max-width: 100%;
+    background-color: black;
+    color:white;
+  }
+ 
+  #light{
+    background-color: white;
+ }
+/*
+@media screen and (max-width:768px){
+    .container{
+        position: absolute;
+        top:1305px;
+        left:0;
+        width:100%;
+       
+    }
+    .cellWrapper {
+        display: flex;
+        align-items: center;
+        font-size:10px;
+      }
+    
+        .image {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          margin-right: 6px;
+          object-fit: cover;
+        }
+      #tableCell , .darks{
+        font-size:10px;
+      }
+    
+      .Approved {
+        padding: 2px;
+        border-radius: 2px;
+        color: green;
+        background-color: rgba(0, 128, 0, 0.151);
+        
+      }
+       
+         
+      
+      .Pending {
+          padding: 2px;
+          border-radius: 2px;
+          color: goldenrod;
+          background-color: rgba(189, 189, 3, 0.103);
+      }
+}
+*/

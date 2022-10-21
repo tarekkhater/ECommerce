@@ -1,0 +1,11 @@
+
+
+@media screen and (max-width:760px) {
+    .container{
+        position: absolute;
+        width:52%;
+        right:0;
+        
+        margin-top:5px;
+    }
+}
