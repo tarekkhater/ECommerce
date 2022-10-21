@@ -48,7 +48,7 @@ class adminController extends Controller
             "phone" =>$request->phone,
             "address" =>$request->address,
             "shop_name"=>$request->shop_name,
-        ]);
+        ]); 
 
         User::create([
             "name" =>$request->name,
