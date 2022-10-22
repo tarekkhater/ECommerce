@@ -3,6 +3,7 @@ import React from 'react'
 import { useState } from 'react'
 import { useAuthAdmin } from '../../Hooks/authAdmin';
 
+
 export default function AddClient() {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -12,7 +13,21 @@ export default function AddClient() {
     const [shop_name, setShop_name] = useState('')
     const [errors, setErrors] = useState([])
     const {add_client} = useAuthAdmin({middleware:"auth:admin"})
-
+    const InputError = ({ messages = []}) => (
+        <>
+            {messages.length > 0 && (
+                <>
+                    {messages.map((message, index) => (
+                        <p
+                            className='text-sm text-red-600'
+                            key={index}>
+                            {message}
+                        </p>
+                    ))}
+                </>
+            )}
+        </>
+    )
         const submitForm = async (e) => {
         e.preventDefault()
         add_client({name, email, password ,phone, address , shop_name , setErrors  })
@@ -20,7 +35,8 @@ export default function AddClient() {
   return (
     <div className={styles.container}> 
     <div className={" bg-white p-2 rounded-lg"} >
-    <label className="block font-medium text-sm text-gray-700" ><h4>Add client</h4></label>
+    <label className="block font-medium text-sm text-gray-700" >
+    <h4 style={{color:"#a82d49"}}>Add client</h4></label>
     <div className="mb-5 " >
     {errors.length > 0 && (
             <>
@@ -47,6 +63,7 @@ export default function AddClient() {
                 autoFocus
                 autoComplete="off"
             />
+            <InputError messages={errors.name} className="mt-2" />
         </div>
 
         <div className="mt-4">
@@ -60,6 +77,7 @@ export default function AddClient() {
                 onChange={event => setEmail(event.target.value)}
                 required
             />
+            <InputError messages={errors.email} className="mt-2" />
         </div>
 
         <div className="mt-4">
@@ -72,7 +90,8 @@ export default function AddClient() {
                 className="block mt-1 w-full rounded-md shadow-md border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                 onChange={event => setPassword(event.target.value)}
                 required
-            />  
+            /> 
+            <InputError messages={errors.password} className="mt-2" />
         </div>
 
         <div className="mt-4">
@@ -86,6 +105,7 @@ export default function AddClient() {
                 onChange={event => setAddress(event.target.value)}
                 required
             />
+            <InputError messages={errors.address} className="mt-2" />
         </div>
         <div className="mt-4">
             <label className="block font-medium text-sm text-gray-700" htmlFor="password">Shop name</label>
@@ -98,6 +118,7 @@ export default function AddClient() {
                 onChange={event => setShop_name(event.target.value)}
                 required
             />
+            <InputError messages={errors.shop_name} className="mt-2" />
         </div>
         <div className="mt-4">
             <label className="block font-medium text-sm text-gray-700" htmlFor="password">Phone</label>
@@ -110,6 +131,7 @@ export default function AddClient() {
                 onChange={event => setPhone(event.target.value)}
                 required
             />
+            <InputError messages={errors.phone} className="mt-2" />
         </div>
 
         <div className="flex items-center justify-end mt-4">

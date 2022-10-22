@@ -1,9 +1,8 @@
 import {AuthCard, AuthSessionStatus , Button , Input , InputError , Label } from '../../components/Tools/Tools'
 import GuestLayout from '../../Components/Layouts/GuestLayout';
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
-import 'tailwindcss/tailwind.css';
+import { AdminPanelSettings } from '@mui/icons-material';
+import { useRouter } from 'next/router';
 import { useAuthAdmin } from '../../Hooks/authAdmin';
 export default function AdminLogin(){
     const router = useRouter()
@@ -39,7 +38,10 @@ export default function AdminLogin(){
 
                 {/* Session Status */}
                 <AuthSessionStatus className="mb-4" status={status} />
-                    <h3>Admin Login</h3>
+                    <div className="w-full justify-center items-center ">
+                    <button className="inline-flex  mb-2 items-center px-4 py-2 bg-red-800 border border-transparent rounded-md font-semibold text-xs  text-white uppercase tracking-widest hover:bg-red-700 active:bg-red-900 focus:outline-none focus:border-red-900 focus:ring ring-red-300 disabled:opacity-25 transition ease-in-out duration-150">
+                       <AdminPanelSettings style={{width:"20px"}}/> Admin Login</button>
+                    </div>
                 <form onSubmit={submitForm} method="POST">
                     {/* Email Address */}
                     <div>
@@ -95,12 +97,6 @@ export default function AdminLogin(){
                     </div>
 
                     <div className="flex items-center justify-end mt-4">
-                        <Link href="/forgot-password">
-                            <a className="underline text-sm text-gray-600 hover:text-gray-900">
-                                Forgot your password?
-                            </a>
-                        </Link>
-
                         <Button className="ml-3">Login</Button>
                     </div>
                 </form>

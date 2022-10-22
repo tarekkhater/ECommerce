@@ -60,6 +60,15 @@ export const InputError = ({ messages = []}) => (
         )}
     </>
 )
+export const InputSuccess = ({ success}) => (
+    <>
+ 
+                    <h4 className='sm:text-md text-green-600'>
+                        {success}
+                    </h4>
+                
+    </>
+)
 
 export const Label = ({className,children, ...props }) => (
     <label

@@ -68,44 +68,6 @@ export const useAuth = ({middleware , redirectIfAuthenticated }) => {
             })
     }
 
-    const forgotPassword = async ({ setErrors, setStatus, email }) => {
-        await csrf()
-
-        setErrors([])
-        setStatus(null)
-
-        axioss
-            .post('/forgot-password', { email })
-            .then(() => mutate())
-            .catch(error => {
-                if (error.response.status !== 422) throw error
-
-                setErrors(error.response.data.errors)
-            })
-    }
-
-    const resetPassword = async ({ setErrors, setStatus, ...props }) => {
-        await csrf()
-
-        setErrors([])
-        setStatus(null)
-
-        axioss
-            .post('/reset-password', { token: router.query.token, ...props })
-            .then(response => router.push('/login?reset=' + btoa(response.data.status)))
-            .catch(error => {
-                if (error.response.status !== 422) throw error
-
-                setErrors(error.response.data.errors)
-            })
-    }
-
-    const resendEmailVerification = ({ setStatus }) => {
-        axioss
-            .post('/email/verification-notification')
-            .then(response => setStatus(response.data.status))
-    }
-
     const logout = async () => {
         if (! error) {
             await axioss
@@ -123,7 +85,6 @@ export const useAuth = ({middleware , redirectIfAuthenticated }) => {
 
     useEffect(() => {
         if (middleware === 'guest' && redirectIfAuthenticated && user) router.push(redirectIfAuthenticated)
-        if (window.location.pathname === "/verify-email" && user?.email_verified_at) router.push(redirectIfAuthenticated)
         if (middleware === 'auth' && error) logout()
     }, [user, error  ])
 
@@ -133,9 +94,6 @@ export const useAuth = ({middleware , redirectIfAuthenticated }) => {
         register,
         login,
         create,
-        forgotPassword,
-        resetPassword,
-        resendEmailVerification,
         logout,
     }
 }
