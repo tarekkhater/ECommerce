@@ -1,5 +1,5 @@
 import {AuthCard, AuthSessionStatus , Button , Input , InputError , Label } from '../../components/Tools/Tools'
-import GuestLayout from '../../Components/Layouts/GuestLayout';
+import GuestLayout from '../../components/Layouts/GuestLayout';
 import { useEffect, useState } from 'react'
 import { AdminPanelSettings } from '@mui/icons-material';
 import { useRouter } from 'next/router';

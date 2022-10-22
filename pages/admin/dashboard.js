@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import AppLayout from '../../Components/Layouts/AppLayout';
+import AppLayout from '../../components/Layouts/AppLayout';
 import { useAuthAdmin } from '../../Hooks/authAdmin';
 import Home from "../../components/dashboard/Home";
 import { useSelector } from 'react-redux';

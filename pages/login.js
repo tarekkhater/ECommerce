@@ -1,5 +1,5 @@
 import {AuthCard , AuthSessionStatus , Button , Input , InputError , Label } from '../components/Tools/Tools'
-import GuestLayout from '../Components/Layouts/GuestLayout';
+import GuestLayout from '../components/Layouts/GuestLayout';
 import Link from 'next/link'
 import { useAuth } from '../Hooks/auth'
 import { useEffect, useState } from 'react'
