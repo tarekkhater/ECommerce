@@ -53,6 +53,7 @@ class productController extends Controller
 
     public function getOrders(){
         $orders = Order::with(relations:"product")->get();
+        $orders->makeVisible(['created_at']);
         $products =[];
         foreach($orders as $order){
         array_push($products , $order->product);   

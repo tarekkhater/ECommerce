@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\clientController;
 use App\Http\Controllers\productController;
 use App\Models\Order;
 use App\Models\Product;
@@ -20,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('welcome');
 });
 
 Route::get('/dashboard', function () {
@@ -41,7 +42,7 @@ Route::group(["middleware" => "auth:web"] , function(){
 Route::group(["middleware" => "auth:client"] , function(){
     Route::get('/createProduct' ,[productController::class,"show"]);
     Route::post('/createProduct' ,[productController::class,"create"])->name('createProduct');
-    Route::post('client/logout',[adminController::class, 'clientLogout']);
+    Route::post('client/logout',[clientController::class, 'clientLogout']);
 });
 
-Route::post('client/login', [adminController::class, 'clientLogin'])->name("client.login");
+Route::post('client/login', [clientController::class, 'clientLogin'])->name("client.login");

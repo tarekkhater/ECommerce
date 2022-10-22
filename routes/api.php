@@ -32,9 +32,6 @@ Route::middleware(['auth:admin'])->get('/admin', function (Request $request) {
     return $request->user("admin");
 });
 
-Route::middleware(['guest'])->get('/products', function (Request $request) {
-    return $request;
-});
 
 
 Route::get('products',[productController::class,'getProducts']);
