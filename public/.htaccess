@@ -21,13 +21,4 @@
 </IfModule>
 
 # Disable Directory listing
-    Options -Indexes
-        <Files ~ "\.(env|json|config.js|md|gitignore|gitattributes|lock|editorconfig|yml|styleci.yml)$">
-            Order allow,deny
-        Deny from all
-        </Files>
-            
-        <Files ~ "(artisan)$">
-            Order allow,deny
-            Deny from all
-        </Files>
+   
